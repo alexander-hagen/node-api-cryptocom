@@ -1,5 +1,7 @@
 # node-api-cryptocom
 
+![Statements](badges/badge-statements.svg) ![Branch](badges/badge-branches.svg) ![Functions](badges/badge-functions.svg) ![Lines](badges/badge-lines.svg)
+
 Non-official implementation of Crypto.com's Exchange API's. Developed for personal use.
 
 For support on using the API's or development issues, please refer to the official API documentation. For questions regarding this package, please consult the code first.
@@ -17,6 +19,7 @@ For support on using the API's or development issues, please refer to the offici
 
 | API                | DESCRIPTION                                                                                         |
 | :----              | :----                                                                                               |
+| getRiskParameters  | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#public-get-risk-parameters          |
 | getSymbols         | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#public-get-instruments              |
 | getOrderBook       | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#public-get-book                     |
 | getCandles         | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#public-get-candlestick              |
@@ -58,10 +61,14 @@ For support on using the API's or development issues, please refer to the offici
 | createSpotOrder  | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-create-order            |
 | cancelSpotOrder  | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-cancel-order            |
 | cancelSpotOrders | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-cancel-all-orders       |
-| closePositions   | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-close-position          |
+| closePosition    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-close-position          |
 | getSpotOrders    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-open-orders         |
 | getSpotOrder     | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-order-detail        |
 | setLeverage      | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-change-account-leverage |
+| setSettings      | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-change-account-settings |
+| getSettings      | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-account-settings    |
+| getAccountFees   | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-fee-rate            |
+| getSymbolFees    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-instrument-fee-rate |
 
 ### Advanced Order Management API
 
@@ -88,6 +95,22 @@ For support on using the API's or development issues, please refer to the offici
 | getDepositAddress    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-deposit-address    |
 | getDepositHistory    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-deposit-history    |
 | getWithdrawalHistory | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-get-withdrawal-history |
+
+### Staking API
+
+| API                  | DESCRIPTION                                                                                             |
+| :----                | :----                                                                                                   |
+| stake                | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-stake                   |
+| unstake              | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-unstake                 |
+| getStakingPosition   | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-staking-position    |
+| getStakingSymbols    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-staking-instruments |
+| getOpenStake         | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-open-stake          |
+| getStakeHistory      | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-stake-history       |
+| getRewardHistory     | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-reward-history      |
+| convert              | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-convert                 |
+| getOpenConvert       | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-open-convert        |
+| getConvertHistory    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#private-staking-get-convert-history     |
+| getConversionRate    | https://exchange-docs.crypto.com/exchange/v1/rest-ws/index.html#public-staking-get-conversion-rate      |
 
 ## __WEBSOCKET API__
 
