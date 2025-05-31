@@ -189,95 +189,113 @@ describe('Websocket User Data', () => {
     console.log("privatews connected");
   });
 
-  test('Test subscribeOrders() function', async () => {
-   const result=await privatews.subscribeOrders();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+  describe('Websocket Private Subscriptions', () => {
 
-  test("Wait for 'user.order.*' event", async () => {
-    const key="user.order";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribeOrders() function', async () => {
+     const result=await privatews.subscribeOrders();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribeOrders() function', async () => {
-    const result=await privatews.unsubscribeOrders();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.order.*' event", async () => {
+      const key="user.order";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
 
-  test('Test subscribeMyTrades() function', async () => {
-   const result=await privatews.subscribeMyTrades();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test('Test unsubscribeOrders() function', async () => {
+      const result=await privatews.unsubscribeOrders();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test("Wait for 'user.trade.*' event", async () => {
-    const key="user.trade";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribeMyTrades() function', async () => {
+     const result=await privatews.subscribeMyTrades();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribeMyTrades() function', async () => {
-    const result=await privatews.unsubscribeMyTrades();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.trade.*' event", async () => {
+      const key="user.trade";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
 
-  test('Test subscribeSpotBalances() function', async () => {
-    const result=await privatews.subscribeSpotBalances();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test('Test unsubscribeMyTrades() function', async () => {
+      const result=await privatews.unsubscribeMyTrades();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test("Wait for 'user.balance.*' event", async () => {
-    const key="user.balance";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribeSpotBalances() function', async () => {
+      const result=await privatews.subscribeSpotBalances();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribeSpotBalances() function', async () => {
-    const result=await privatews.unsubscribeSpotBalances();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.balance.*' event", async () => {
+      const key="user.balance";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
 
-  test('Test subscribePositions() function', async () => {
-    const result=await privatews.subscribePositions();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test('Test unsubscribeSpotBalances() function', async () => {
+      const result=await privatews.unsubscribeSpotBalances();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test("Wait for 'user.positions.*' event", async () => {
-    const key="user.positions";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribePositions() function', async () => {
+      const result=await privatews.subscribePositions();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribePositions() function', async () => {
-    const result=await privatews.unsubscribePositions();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.positions.*' event", async () => {
+      const key="user.positions";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
 
-  test('Test subscribeRiskStatus() function', async () => {
-    const result=await privatews.subscribeRiskStatus();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test('Test unsubscribePositions() function', async () => {
+      const result=await privatews.unsubscribePositions();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test("Wait for 'user.account_risk.*' event", async () => {
-    const key="user.account_risk";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribeRiskStatus() function', async () => {
+      const result=await privatews.subscribeRiskStatus();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribeRiskStatus() function', async () => {
-    const result=await privatews.unsubscribeRiskStatus();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.account_risk.*' event", async () => {
+      const key="user.account_risk";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
 
-  test('Test subscribePositionBalances() function', async () => {
-    const result=await privatews.subscribePositionBalances();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test('Test unsubscribeRiskStatus() function', async () => {
+      const result=await privatews.unsubscribeRiskStatus();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test("Wait for 'user.position_balance.*' event", async () => {
-    const key="user.position_balance";
-    return expect(waitForPromise(key)).resolves.toBe(key);
-  }, longwait);
+    test('Test subscribePositionBalances() function', async () => {
+      const result=await privatews.subscribePositionBalances();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
 
-  test('Test unsubscribePositionBalances() function', async () => {
-    const result=await privatews.unsubscribePositionBalances();
-    expect(result).toHaveProperty("code",0);
-  }, timeout);
+    test("Wait for 'user.position_balance.*' event", async () => {
+      const key="user.position_balance";
+      return expect(waitForPromise(key)).resolves.toBe(key);
+    }, longwait);
+
+    test('Test unsubscribePositionBalances() function', async () => {
+      const result=await privatews.unsubscribePositionBalances();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
+
+  });
+
+  describe('Websocket Private Non-Subscriptions', () => {
+
+    test('Test setCancelOnDisconnect() function', async () => {
+      const result=await privatews.setCancelOnDisconnect();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
+
+    test('Test getCancelOnDisconnect() function', async () => {
+      const result=await privatews.getCancelOnDisconnect();
+      expect(result).toHaveProperty("code",0);
+    }, timeout);
+
+  });
 
   afterAll(async () => { // clean-up socket
     await privatews.clearHandlers();
