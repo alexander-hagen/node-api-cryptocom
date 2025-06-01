@@ -115,7 +115,7 @@ describe('Trading AP', () => {
 
   test('Test getSettings() function', async () => {
     const result=await privateAPI.getSettings();
-    expect(result).toHaveProperty("leverage");
+    expect(result[0]).toHaveProperty("leverage");
   }, timeout);
 
   test('Test getAccountFees() function', async () => {

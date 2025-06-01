@@ -35,7 +35,7 @@ describe('Websocket Market Data', () => {
 
   test('Test subscribeOrderbook() function', async () => {
    const result=await publicws.subscribeOrderbook(symbol,depth);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test("Wait for 'book.*' event", async () => {
@@ -45,12 +45,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeOrderbook() function', async () => {
     const result=await publicws.unsubscribeOrderbook(symbol,depth);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeTicker() function', async () => {
     const result=await publicws.subscribeTicker(symbol);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","ticker");
   }, timeout);
 
   test("Wait for 'ticker.*' event", async () => {
@@ -60,12 +60,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeTicker() function', async () => {
     const result=await publicws.unsubscribeTicker(symbol,depth);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeTrades() function', async () => {
     const result=await publicws.subscribeTrades(symbol);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","trade");
   }, timeout);
 
   test("Wait for 'trade.*' event", async () => {
@@ -75,12 +75,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeTrades() function', async () => {
     const result=await publicws.unsubscribeTrades(symbol);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout); 
 
   test('Test subscribeCandles() function', async () => {
     const result=await publicws.subscribeCandles("1m",symbol);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","candlestick");
   }, timeout);
 
   test("Wait for 'candlestick.*' event", async () => {
@@ -90,12 +90,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeCandles() function', async () => {
     const result=await publicws.unsubscribeCandles("1m",symbol);
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeIndex() function', async () => {
     const result=await publicws.subscribeIndex("BTCUSD-INDEX");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","index");
   }, timeout);
 
   test("Wait for 'index.*' event", async () => {
@@ -105,12 +105,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeIndex() function', async () => {
     const result=await publicws.unsubscribeIndex("BTCUSD-INDEX");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeMarkPrices() function', async () => {
     const result=await publicws.subscribeMarkPrices("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","mark");
   }, timeout);
 
   test("Wait for 'mark.*' event", async () => {
@@ -120,12 +120,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeMarkPrices() function', async () => {
     const result=await publicws.unsubscribeMarkPrices("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeSettlementPrices() function', async () => {
     const result=await publicws.subscribeSettlementPrices();
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test("Wait for 'settlement.*' event", async () => {
@@ -135,12 +135,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeSettlementPrices() function', async () => {
     const result=await publicws.unsubscribeSettlementPrices();
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeFunding() function', async () => {
     const result=await publicws.subscribeFunding("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","funding");
   }, timeout);
 
   test("Wait for 'funding.*' event", async () => {
@@ -150,12 +150,12 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeFunding() function', async () => {
     const result=await publicws.unsubscribeFunding("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   test('Test subscribeEstimatedFunding() function', async () => {
     const result=await publicws.subscribeEstimatedFunding("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toHaveProperty("channel","estimatedfunding");
   }, timeout);
 
   test("Wait for 'estimatedfunding.*' event", async () => {
@@ -165,7 +165,7 @@ describe('Websocket Market Data', () => {
 
   test('Test unsubscribeEstimatedFunding() function', async () => {
     const result=await publicws.unsubscribeEstimatedFunding("BTCUSD-PERP");
-    expect(result).toHaveProperty("code",0);
+    expect(result).toStrictEqual({});
   }, timeout);
 
   afterAll(async () => { // clean-up socket
@@ -193,7 +193,7 @@ describe('Websocket User Data', () => {
 
     test('Test subscribeOrders() function', async () => {
      const result=await privatews.subscribeOrders();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.order.*' event", async () => {
@@ -203,12 +203,12 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribeOrders() function', async () => {
       const result=await privatews.unsubscribeOrders();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test('Test subscribeMyTrades() function', async () => {
      const result=await privatews.subscribeMyTrades();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.trade.*' event", async () => {
@@ -218,12 +218,12 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribeMyTrades() function', async () => {
       const result=await privatews.unsubscribeMyTrades();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test('Test subscribeSpotBalances() function', async () => {
       const result=await privatews.subscribeSpotBalances();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.balance.*' event", async () => {
@@ -233,12 +233,12 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribeSpotBalances() function', async () => {
       const result=await privatews.unsubscribeSpotBalances();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test('Test subscribePositions() function', async () => {
       const result=await privatews.subscribePositions();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.positions.*' event", async () => {
@@ -248,12 +248,12 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribePositions() function', async () => {
       const result=await privatews.unsubscribePositions();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test('Test subscribeRiskStatus() function', async () => {
       const result=await privatews.subscribeRiskStatus();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.account_risk.*' event", async () => {
@@ -263,12 +263,12 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribeRiskStatus() function', async () => {
       const result=await privatews.unsubscribeRiskStatus();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test('Test subscribePositionBalances() function', async () => {
       const result=await privatews.subscribePositionBalances();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
     test("Wait for 'user.position_balance.*' event", async () => {
@@ -278,7 +278,7 @@ describe('Websocket User Data', () => {
 
     test('Test unsubscribePositionBalances() function', async () => {
       const result=await privatews.unsubscribePositionBalances();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toStrictEqual({});
     }, timeout);
 
   });
@@ -287,12 +287,12 @@ describe('Websocket User Data', () => {
 
     test('Test setCancelOnDisconnect() function', async () => {
       const result=await privatews.setCancelOnDisconnect();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toHaveProperty("scope");
     }, timeout);
 
     test('Test getCancelOnDisconnect() function', async () => {
       const result=await privatews.getCancelOnDisconnect();
-      expect(result).toHaveProperty("code",0);
+      expect(result).toHaveProperty("scope");
     }, timeout);
 
   });
