@@ -1,6 +1,6 @@
 {
   "name": "node-api-cryptocom",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Non-official implementation of Crypto.com's Exchange API's",
   "main": "index.js",
   "jest": {
@@ -20,7 +20,7 @@
     "url": "git+https://github.com/alexander-hagen/node-api-cryptocom.git"
   },
   "keywords": [
-    "kraken",
+    "cryptodotcom",
     "tradebots.nl"
   ],
   "author": "Alexander-hagen",
