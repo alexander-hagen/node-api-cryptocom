@@ -1,6 +1,6 @@
 {
   "name": "node-api-cryptocom",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Non-official implementation of Crypto.com's Exchange API's",
   "main": "index.js",
   "jest": {
