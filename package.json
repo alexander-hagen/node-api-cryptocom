@@ -31,7 +31,7 @@
   "homepage": "https://github.com/alexander-hagen/node-api-cryptocom#readme",
   "dependencies": {
     "axios": "^1.11.0",
-    "limiter": "^3.0.0",
+    "limiter": "^4.1.0",
     "ws": "^8.18.3"
   },
   "devDependencies": {
